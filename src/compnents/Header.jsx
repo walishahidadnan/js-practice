@@ -4,6 +4,7 @@ import Product from './prodact/product'
 import Promo from './Promo/Promo'
 import { Routes, Route } from 'react-router-dom'
 import Team from './Team/Team'
+import Content from './Content/Content'
 
 const Header = () => {
   return (
@@ -14,6 +15,7 @@ const Header = () => {
         <Route path='/' element={<Product />} />
         <Route path='/promo' element={<Promo />} />
         <Route path='/team' element={<Team />} />
+        <Route path='/promo/content' element={<Content />} />
       </Routes>
       
     </>
