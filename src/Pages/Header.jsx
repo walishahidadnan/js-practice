@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from './Navbar/Navbar'
-import Product from './prodact/product'
-import Promo from './Promo/Promo'
+import Navbar from '../compnents/Navbar/Navbar'
+import Product from '../compnents/prodact/product'
+import Promo from '../compnents/Promo/Promo'
 import { Routes, Route } from 'react-router-dom'
-import Team from './Team/Team'
-import Content from './Content/Content'
+import Team from '../compnents/Team/Team'
+import Content from '../compnents/Content/Content'
 
 const Header = () => {
   return (
