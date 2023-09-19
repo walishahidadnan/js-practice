@@ -59,7 +59,7 @@ export default function Content() {
                 semper sed amet vitae sed turpis id.
               </p>
               <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                <li className="flex gap-x-3">
+                <li className="flex gap-x-3 p-5 border-2 border-white hover:border-blue-400 pointer transition-all">
                   <CloudArrowUpIcon className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
                   <span>
                     <strong className="font-semibold text-gray-900">Push to deploy.</strong> Lorem ipsum, dolor sit amet
@@ -67,14 +67,14 @@ export default function Content() {
                     blanditiis ratione.
                   </span>
                 </li>
-                <li className="flex gap-x-3">
+                <li className="flex gap-x-3 p-5 border-2 border-white hover:border-blue-400 pointer transition-all">
                   <LockClosedIcon className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
                   <span>
                     <strong className="font-semibold text-gray-900">SSL certificates.</strong> Anim aute id magna aliqua
                     ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.
                   </span>
                 </li>
-                <li className="flex gap-x-3">
+                <li className="flex gap-x-3 p-5 border-2 border-white hover:border-blue-400 pointer transition-all">
                   <ServerIcon className="mt-1 h-5 w-5 flex-none text-indigo-600" aria-hidden="true" />
                   <span>
                     <strong className="font-semibold text-gray-900">Database backups.</strong> Ac tincidunt sapien
