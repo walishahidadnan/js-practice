@@ -6,6 +6,7 @@ import Header from '../compnents/Header/Header'
 // import { Routes, Route } from 'react-router-dom'
 import Team from '../compnents/Team/Team'
 import Content from '../compnents/Content/Content'
+import Forms from '../compnents/Form/Froms'
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <Promo />
       <Team />
       <Content />
+      <Forms />
     </>
   )
 }
