@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../compnents/Navbar/Navbar'
-import Product from '../compnents/prodact/product'
 import Promo from '../compnents/Promo/Promo'
 import Header from '../compnents/Header/Header'
 import Team from '../compnents/Team/Team'
@@ -18,7 +17,6 @@ const Home = () => {
         <Route path='/promo/content' element={<Content />} />
       </Routes> */}
       <Header />
-      <Product />
       <Promo />
       <Team />
       <Content />
