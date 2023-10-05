@@ -24,7 +24,6 @@ const Home = () => {
       <Promo />
       <Team />
       <Content />
-      <Forms />
     </>
   )
 }
