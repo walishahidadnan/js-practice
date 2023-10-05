@@ -3,10 +3,8 @@ import Navbar from '../compnents/Navbar/Navbar'
 import Product from '../compnents/prodact/product'
 import Promo from '../compnents/Promo/Promo'
 import Header from '../compnents/Header/Header'
-// import { Routes, Route } from 'react-router-dom'
 import Team from '../compnents/Team/Team'
 import Content from '../compnents/Content/Content'
-import Forms from '../compnents/Form/Froms'
 
 const Home = () => {
   return (
