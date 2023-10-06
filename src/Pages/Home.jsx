@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from '../compnents/Navbar/Navbar'
 import Promo from '../compnents/Promo/Promo'
 import Header from '../compnents/Header/Header'
-import Team from '../compnents/Team/Team'
 import Content from '../compnents/Content/Content'
 
 const Home = () => {
@@ -18,7 +17,6 @@ const Home = () => {
       </Routes> */}
       <Header />
       <Promo />
-      <Team />
       <Content />
     </>
   )
