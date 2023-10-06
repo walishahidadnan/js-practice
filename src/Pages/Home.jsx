@@ -1,6 +1,5 @@
 import React from 'react'
 import Navbar from '../compnents/Navbar/Navbar'
-import Promo from '../compnents/Promo/Promo'
 import Header from '../compnents/Header/Header'
 import Content from '../compnents/Content/Content'
 
@@ -16,7 +15,6 @@ const Home = () => {
         <Route path='/promo/content' element={<Content />} />
       </Routes> */}
       <Header />
-      <Promo />
       <Content />
     </>
   )
