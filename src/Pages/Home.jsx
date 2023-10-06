@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from '../compnents/Navbar/Navbar'
 import Header from '../compnents/Header/Header'
-import Content from '../compnents/Content/Content'
 
 const Home = () => {
   return (
@@ -15,7 +14,7 @@ const Home = () => {
         <Route path='/promo/content' element={<Content />} />
       </Routes> */}
       <Header />
-      <Content />
+
     </>
   )
 }
