@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import './todo.css'
+import {AiOutlineDelete} from 'react-icons/ai'
+import {BsCheckLg} from 'react-icons/bs'
+
 const TodoList = () => {
     const [isCompleted, setIsCompleted] = useState(false)
 
@@ -29,8 +32,15 @@ const TodoList = () => {
                 </div>
                 <div className="todo-list">
                     <div className="todo-list-item">
-                        <h3>Task 1</h3>
-                        <p>Description</p>
+                        <div>
+                            <h3>Task 1</h3>
+                            <p>Description</p>
+                        </div>
+                        <div>
+                            <AiOutlineDelete className='icon' />
+                            <BsCheckLg />
+
+                        </div>
                     </div>
                 </div>
             </div>

@@ -77,3 +77,14 @@ h1{
 .active{
     background-color: #f29559;
 }
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.todo-list-item{
+    background-color: #202c39;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
