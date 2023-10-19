@@ -37,9 +37,8 @@ const TodoList = () => {
                             <p>Description</p>
                         </div>
                         <div>
-                            <AiOutlineDelete className='icon' />
-                            <BsCheckLg />
-
+                            <AiOutlineDelete className='icons' />
+                            <BsCheckLg className='check-icon'/>
                         </div>
                     </div>
                 </div>
