@@ -20,6 +20,12 @@ const TodoList = () => {
         setAllTodos(updatedtodos);
         localStorage.setItem('Todolist', JSON.stringify(updatedtodos))
     }
+    useEffect(()=>{
+        let savedTodo = JSON.parse(localStorage.getItem('Todolist'))
+        if(savedTodo){
+            setAllTodos(savedTodo)
+        }
+    }, [])
 
   return (
     <div>
