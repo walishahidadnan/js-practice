@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './todo.css'
 import {AiOutlineDelete} from 'react-icons/ai'
 import {BsCheckLg} from 'react-icons/bs'
@@ -20,6 +20,12 @@ const TodoList = () => {
         setAllTodos(updatedtodos);
         localStorage.setItem('Todolist', JSON.stringify(updatedtodos))
     }
+    useEffect(()=>{
+        let savedTodo = JSON.parse(localStorage.getItem('Todolist'))
+        if(savedTodo){
+            setAllTodos(savedTodo)
+        }
+    }, [])
 
   return (
     <div>
