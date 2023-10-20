@@ -5,6 +5,21 @@ import {BsCheckLg} from 'react-icons/bs'
 
 const TodoList = () => {
     const [isCompleted, setIsCompleted] = useState(false)
+    const [allTodos, setAllTodos] = useState([])
+    const [newTittle, setTittle] = useState("")
+    const [newDescription, setDescription] = useState("")
+    
+    const handleTodo = () =>{
+        let newTodo = {
+            tittle: newTittle, 
+            description: newDescription
+        }
+
+        let updatedtodos = [...allTodos];
+        updatedtodos.push(newTodo);
+        setAllTodos(updatedtodos);
+        localStorage.setItem('Todolist', JSON.stringify(updatedtodos))
+    }
 
   return (
     <div>
@@ -15,32 +30,36 @@ const TodoList = () => {
                 <div className="todo-input">
                     <div className="todo-input-item">
                         <label>Tittle</label>
-                        <input type="text" placeholder='whats the task tittle'/>
+                        <input type="text" value={newTittle} onChange={(e)=> setTittle(e.target.value)} placeholder='whats the task tittle'/>
                     </div>
                     <div className="todo-input-item">
                         <label>Description</label>
-                        <input type="text" placeholder='whats the task tittle'/>
+                        <input type="text" value={newDescription} onChange={(e)=> setDescription(e.target.value)}placeholder='whats the task tittle'/>
                     </div>
                     <div className="todo-input-item">
-                        <button type='button' className='primaryBtn'>Add</button>
+                        <button type='button' onClick={handleTodo} className='primaryBtn'>Add</button>
                     </div>
                 </div>
 
                 <div className="btn-area">
-                    <button className={`secondaryBtn ${isCompleted === false && 'active'}`} onclick={()=> setIsCompleted(false)}>Todo</button>
-                    <button className={`secondaryBtn ${isCompleted === true && 'active'}`} onclick={()=> setIsCompleted(true)}>Completed</button>
+                    <button className={`secondaryBtn ${isCompleted === false && 'active'}`} onClick={()=> setIsCompleted(false)}>Todo</button>
+                    <button className={`secondaryBtn ${isCompleted === true && 'active'}`} onClick={()=> setIsCompleted(true)}>Completed</button>
                 </div>
                 <div className="todo-list">
-                    <div className="todo-list-item">
-                        <div>
-                            <h3>Task 1</h3>
-                            <p>Description</p>
-                        </div>
-                        <div>
-                            <AiOutlineDelete className='icons' />
-                            <BsCheckLg className='check-icon'/>
-                        </div>
-                    </div>
+                    {allTodos.map((item, index) => {
+                        return (
+                            <div className="todo-list-item" key={index}>
+                                <div>
+                                    <h3>{item.tittle}</h3>
+                                    <p>{item.description}</p>
+                                </div>
+                                <div>
+                                    <AiOutlineDelete className='icons' />
+                                    <BsCheckLg className='check-icon'/>
+                                </div>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </div>
