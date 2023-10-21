@@ -24,7 +24,7 @@ const TodoList = () => {
 
     const handleDeleteTodo = (index) =>{
         let reduced = [...allTodos];
-        reduced.splice(index);
+        reduced.splice(index,1);
 
         localStorage.setItem('Todolist', JSON.stringify(reduced));
         setAllTodos(reduced)
@@ -55,7 +55,7 @@ const TodoList = () => {
 
     const handleDeleteCompletedTodo = (index) => {
         let reduced = [...completedTodos];
-        reduced.splice(index);
+        reduced.splice(index, 1);
 
         localStorage.setItem('completedTodolist', JSON.stringify(reduced));
         setCompletedTodos(reduced)
