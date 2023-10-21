@@ -112,7 +112,6 @@ h1{
 .check-icon{
     font-size: 25px;
     cursor: pointer;
-}
-.check-icon:hover{
     color: rgb(0, 230, 122);
+
 }
