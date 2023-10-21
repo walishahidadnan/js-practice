@@ -50,13 +50,25 @@ const TodoList = () => {
         updatedCompletedArr.push(filteritem)
         setCompletedTodos(updatedCompletedArr)
         handleDeleteTodo(index)
+        localStorage.setItem('completedTodolist', JSON.stringify(updatedCompletedArr))
+    }
 
+    const handleDeleteCompletedTodo = (index) => {
+        let reduced = [...completedTodos];
+        reduced.splice(index);
+
+        localStorage.setItem('completedTodolist', JSON.stringify(reduced));
+        setCompletedTodos(reduced)
     }
 
     useEffect(()=>{
         let savedTodo = JSON.parse(localStorage.getItem('Todolist'))
+        let savedCompletedTodo = JSON.parse(localStorage.getItem('completedTodolist'))
         if(savedTodo){
             setAllTodos(savedTodo)
+        }
+        if(savedCompletedTodo){
+            setCompletedTodos(savedCompletedTodo)
         }
     }, [])
 
@@ -108,7 +120,7 @@ const TodoList = () => {
                                     <p><small><i>Completed on: {item.completedOn}</i></small></p>
                                 </div>
                                 <div>
-                                    <AiOutlineDelete className='icons' type='button' onClick={()=>handleDeleteTodo(index)}/>
+                                    <AiOutlineDelete className='icons' type='button' onClick={()=>handleDeleteCompletedTodo(index)}/>
                                 </div>
                             </div>
                         )
