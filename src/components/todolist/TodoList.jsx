@@ -70,7 +70,7 @@ const TodoList = () => {
                                 </div>
                                 <div>
                                     <AiOutlineDelete className='icons' type='button' onClick={()=>handleDeleteTodo(index)}/>
-                                    <BsCheckLg className='check-icon'/>
+                                    <BsCheckLg className='check-icon' type='button' />
                                 </div>
                             </div>
                         )
