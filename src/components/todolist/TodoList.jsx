@@ -31,7 +31,7 @@ const TodoList = () => {
     }
 
     const handleCompletedTods = (index) => {
-        let now = Date();
+        let now = new Date();
         let dd = now.getDate();
         let mm = now.getMonth() + 1;
         let yyyy = now.getFullYear();
@@ -49,6 +49,7 @@ const TodoList = () => {
         let updatedCompletedArr = [...completedTodos]
         updatedCompletedArr.push(filteritem)
         setCompletedTodos(updatedCompletedArr)
+        handleDeleteTodo(index)
 
     }
 
