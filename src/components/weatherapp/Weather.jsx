@@ -28,10 +28,10 @@ const Weather = () => {
                     </div>
                     <div className="col">
                         <img src={wind} alt="humidity" />
-                            <div className="wind">
-                                <p>2 km/h</p>
-                                <p>wind</p>
-                            </div>
+                         <div className="wind">
+                            <p>2 km/h</p>
+                            <p>wind</p>
+                        </div>`
                     </div>
                 </div>
             </div>
