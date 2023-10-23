@@ -64,23 +64,6 @@ body{
     margin-top: 5px;
     color: #fff;
 }
-
-.winfo h2{
-    font-size: 40px;
-    font-weight: 400;
-    margin-top: 0px;
-    color: #fff;
-}
-
-.details{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px 20px;
-    margin-top: 10px;
-    color: #fff;
-}
-
 .details .col {
     display: flex;
     align-items: center;
