@@ -1,0 +1,25 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(126, 152, 225);
+    padding-top: 50px;
+    margin: 0px;
+}
+
+.weather{
+    width: 380px;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 50px auto;
+    background: linear-gradient(130deg, rgba(86, 86, 235), rgba(5, 5, 199));
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
