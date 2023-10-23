@@ -4,9 +4,9 @@ body{
 }
 .container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: rgb(126, 152, 225);
-    padding-top: 50px;
+    padding: 50px 0px;
     margin: 0px;
 }
 
@@ -22,4 +22,80 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.search input{
+    border: none;
+    outline: none;
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: rgb(222, 237, 243);
+    color: black;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 12px;
+}
+
+.search-button{
+    border: none;
+    outline: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    align-items: center;
+}
+
+.winfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.winfo .icon{
+    margin-top: 20px;
+    width: 170px;
+}
+
+.winfo h1 {
+    font-size: 70px;
+    font-weight: 500;
+    margin-top: 5px;
+    color: #fff;
+}
+
+.winfo h2{
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 0px;
+    color: #fff;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.details .col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.details .col img {
+    width: 45px;
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    font-size: 27px;
+}
+
+.humidity p, .wind p {
+    margin: 0px;
 }
