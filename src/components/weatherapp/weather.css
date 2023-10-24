@@ -1,4 +1,14 @@
-
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.container {
+    width: 100%;
+    height: auto;
+    background-color: rgb(126, 152, 225);
+    padding: 50px 0px;
+    margin: 0px;
+}
 
 .weather{
     width: 380px;
