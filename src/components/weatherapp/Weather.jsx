@@ -18,22 +18,7 @@ const Weather = () => {
                     <h1>22°C</h1>
                     <h2>London</h2>
                 </div>
-                <div className="details">
-                    <div className="col">
-                        <img src={humidity} alt="humidity" />
-                        <div className="humidity">
-                            <p>20%</p>
-                            <p>Humidity</p>
-                        </div>
-                    </div>
-                    <div className="col">
-                        <img src={wind} alt="humidity" />
-                         <div className="wind">
-                            <p>2 km/h</p>
-                            <p>wind</p>
-                        </div>`
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
