@@ -6,10 +6,7 @@ function App() {
 
   return (
     <>
-    {/* simple React TodoList */}
-      {/* <TodoList />  */}
-    {/* Typescript Todolist */}
-      {/* <TodoList2 /> */}
+    
     
     <Weather />
     </>

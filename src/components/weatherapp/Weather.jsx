@@ -1,7 +1,6 @@
 import React from 'react'
 import cloud from '../../assets/cloud.png'
 import humidity from '../../assets/humidity.png'
-import wind from '../../assets/wind.png'
 import './weather.css';
 
 const Weather = () => {
