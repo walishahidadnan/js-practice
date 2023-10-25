@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import humidity from '../../assets/humidity.png'
 import wind from '../../assets/wind.png'
 import axios from 'axios'
+import cloud from '../../assets/cloud.png'
+import clear from "../../assets/clear.png"
+import rain from "../../assets/rain.png"
+import drizzle from "../../assets/drizzle.png"
+import mist from "../../assets/mist.png"
 import './weather.css';
-
-
-
 
 
 
@@ -16,7 +18,7 @@ const Weather = () => {
         name: 'london',
         humidity: 10,
         speed: 2, 
-        image: ''
+        image: cloud
     })
 
     const [ name, setName] = useState('');
@@ -29,31 +31,24 @@ const Weather = () => {
             axios.get(apiUrl)
             
             .then(res => {
-                let imagePath = '';
+                let imagePath = cloud;
                 if(res.data.weather[0].main == "Clouds"){
-                    imagePath = "../../assets/cloud.png"
-                }
-                else if(res.data.weather[0].main == "Clear"){
-                    imagePath = "../../assets/clear.png"
-                }
-                else if(res.data.weather[0].main == "Rain"){
-                    imagePath = "../../assets/rain.png"
-                }
-                else if(res.data.weather[0].main == "Drizzle"){
-                    imagePath = "../../assets/drizzle.png"
-                }
-                else if(res.data.weather[0].main == "Mist"){
-                    imagePath = "../../assets/mist.png"
+                    imagePath = cloud
+                }else if(res.data.weather[0].main == "Clear"){
+                    imagePath = clear
+                }else if(res.data.weather[0].main == "Rain"){
+                    imagePath = rain
+                }else if(res.data.weather[0].main == "Drizzle"){
+                    imagePath = drizzle
+                }else if(res.data.weather[0].main == "Mist"){
+                    imagePath = mist
                 }else {
-                    imagePath = "../../assets/cloud.png"
+                    imagePath = cloud
                 }
-
-                
                 setData({...data, celcious: res.data.main.temp, name: res.data.name, humidity: res.data.main.humidity, speed: res.data.wind.speed, image: imagePath })
             })
             .catch( err => console.log(err))
         }
-        console.log(data.imagePath)
     }
 
 
