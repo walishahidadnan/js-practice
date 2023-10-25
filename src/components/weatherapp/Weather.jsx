@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import cloud from '../../assets/cloud.png'
 import humidity from '../../assets/humidity.png'
 import wind from '../../assets/wind.png'
 import axios from 'axios'
 import './weather.css';
+
+
+
+
+
 
 const Weather = () => {
 
@@ -11,22 +15,46 @@ const Weather = () => {
         celcious: 10,
         name: 'london',
         humidity: 10,
-        speed: 2
+        speed: 2, 
+        image: ''
     })
 
     const [ name, setName] = useState('');
 
-    useEffect(()=> {
-        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=pakistan&appid=cf83f92d235fc7705f8be4b52df838c5&units=metric';
 
-        axios.get(apiUrl)
-        
+    const handleClick = () => {
+        if (name !== "") {
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=cf83f92d235fc7705f8be4b52df838c5&units=metric`;
+
+            axios.get(apiUrl)
+            
             .then(res => {
-                setData({...data, celcious: res.data.main.temp, name: res.data.name, humidity: res.data.main.humidity, speed: res.data.wind.speed })
-                console.log(res.data)
+                let imagePath = '';
+                if(res.data.weather[0].main == "Clouds"){
+                    imagePath = "../../assets/cloud.png"
+                }
+                else if(res.data.weather[0].main == "Clear"){
+                    imagePath = "../../assets/clear.png"
+                }
+                else if(res.data.weather[0].main == "Rain"){
+                    imagePath = "../../assets/rain.png"
+                }
+                else if(res.data.weather[0].main == "Drizzle"){
+                    imagePath = "../../assets/drizzle.png"
+                }
+                else if(res.data.weather[0].main == "Mist"){
+                    imagePath = "../../assets/mist.png"
+                }else {
+                    imagePath = "../../assets/cloud.png"
+                }
+
+                
+                setData({...data, celcious: res.data.main.temp, name: res.data.name, humidity: res.data.main.humidity, speed: res.data.wind.speed, image: imagePath })
             })
             .catch( err => console.log(err))
-    })
+        }
+        console.log(data.imagePath)
+    }
 
 
   return (
@@ -38,7 +66,7 @@ const Weather = () => {
                     <button className='search-button' onClick={handleClick}>&#128269;</button>
                 </div>
                 <div className="winfo">
-                    <img src={cloud} alt="weather" className='icon'/>
+                    <img src={data.image} alt="weather" className='icon'/>
                     <h1>{Math.round(data.celcious)}°C</h1>
                     <h2>{data.name}</h2>
                 </div>
