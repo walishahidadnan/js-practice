@@ -45,6 +45,7 @@ const Weather = () => {
                     imagePath = cloud
                 }
                 setData({...data, celcious: res.data.main.temp, name: res.data.name, humidity: res.data.main.humidity, speed: res.data.wind.speed, image: imagePath })
+                setError("")
             })
             .catch( err => {
                 if (err.response.status == 404){
