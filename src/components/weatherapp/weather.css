@@ -99,3 +99,11 @@ body{
 .humidity p, .wind p {
     margin: 0px;
 }
+
+.error{
+    background-color: rgb(165, 1, 15);
+    color: rgb(184, 184, 184);
+    text-align: left;
+    margin-top: 10px;
+    padding: 5px 10px;
+}

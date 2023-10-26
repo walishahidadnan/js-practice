@@ -9,8 +9,6 @@ import drizzle from "../../assets/drizzle.png"
 import mist from "../../assets/mist.png"
 import './weather.css';
 
-
-
 const Weather = () => {
 
     const [data, setData] = useState({
@@ -22,6 +20,7 @@ const Weather = () => {
     })
 
     const [ name, setName] = useState('');
+    const [ error, setError] = useState('');
 
 
     const handleClick = () => {
@@ -47,10 +46,15 @@ const Weather = () => {
                 }
                 setData({...data, celcious: res.data.main.temp, name: res.data.name, humidity: res.data.main.humidity, speed: res.data.wind.speed, image: imagePath })
             })
-            .catch( err => console.log(err))
+            .catch( err => {
+                if (err.response.status == 404){
+                    setError("Invaild CIty. Enter a Valid City Name")
+                } else {
+                    setError("")
+                }
+                console.log(err)})
         }
     }
-
 
   return (
     <div>
@@ -59,6 +63,9 @@ const Weather = () => {
                 <div className="search">
                     <input type="text" placeholder='Enter City Name' onChange={e => setName(e.target.value)} />
                     <button className='search-button' onClick={handleClick}>&#128269;</button>
+                </div>
+                <div className="error">
+                    <p>{error}</p>
                 </div>
                 <div className="winfo">
                     <img src={data.image} alt="weather" className='icon'/>
@@ -78,7 +85,7 @@ const Weather = () => {
                          <div className="wind">
                             <p>{Math.round(data.speed)}km/h</p>
                             <p>wind</p>
-                        </div>`
+                        </div>
                     </div>
                 </div>
             </div>
