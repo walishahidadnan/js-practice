@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Tile = () => {
+const Tile = ({className, value}) => {
   return (
-    <div>Tile</div>
+    <div className={`tile ${className}`}>{value}</div>
   )
 }
 
