@@ -2,7 +2,7 @@ import React from 'react'
 import Tile from './Tile'
 import Strick from './Strick'
 
-const Board = ({ tiles, onTileClick, playerTrun }) => {
+const Board = ({ tiles, onTileClick, playerTrun, strikeClass }) => {
   return (
     <div className='board'>
         <Tile playerTrun={playerTrun} onClick={() => onTileClick(0)} value={tiles[0]} className='right-border bottom-border'/>
@@ -14,7 +14,7 @@ const Board = ({ tiles, onTileClick, playerTrun }) => {
         <Tile playerTrun={playerTrun} onClick={() => onTileClick(6)} value={tiles[6]} className='right-border'/>
         <Tile playerTrun={playerTrun} onClick={() => onTileClick(7)} value={tiles[7]} className='right-border'/>
         <Tile playerTrun={playerTrun} onClick={() => onTileClick(8)} value={tiles[8]} />
-        <Strick />
+        <Strick strikeClass={strikeClass} />
     </div>
   )
 }

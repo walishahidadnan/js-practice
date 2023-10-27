@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Strick = () => {
+const Strick = ({ strikeClass }) => {
   return (
-    <div>Strick</div>
+    <div className={`strike ${strikeClass}`} ></div>
   )
 }
 
