@@ -19,16 +19,16 @@ const winningCombinations = [
 
   //Diagonals
   { combo: [0, 4, 8], strikeClass: "strike-diagonal-1" },
-  { combo: [2, 4, 6], strikeClass: "strike-diagonal-2" },
+  { combo: [2, 4, 6], strikeClass: "strike-diagonal-2" }
 ];
 
 
 function checkWinner(tiles, setStrikeClass) {
     for (const { combo, strikeClass } of winningCombinations) {
+
       const tileValue1 = tiles[combo[0]];
       const tileValue2 = tiles[combo[1]];
       const tileValue3 = tiles[combo[2]];
-      console.log("Tile Values:", tileValue1, tileValue2, tileValue3); 
       if (
         tileValue1 != null &&
         tileValue1 === tileValue2 &&
@@ -62,7 +62,7 @@ const TicToe = () => {
   }
 
   useEffect(()=>{
-    checkWinner();
+    checkWinner(tiles, setStrikeClass);
   }, [tiles])
 
   return (
