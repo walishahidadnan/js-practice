@@ -4,6 +4,15 @@ import './tictoe.css'
 import GameOver from './GameOver';
 import GameState from './GameState';
 import Reset from './Reset';
+import GameOverSound from '../../sound/gameover.wav';
+import ClickSound from '../../sound/clicksound.wav';
+
+
+const gameOverSound = new Audio(GameOverSound);
+gameOverSound.volume = 0.2;
+const clickSound = new Audio(ClickSound);
+clickSound.volume = 0.5;
+
 
 
 const Player_X = 'X';
@@ -62,6 +71,13 @@ const TicToe = () => {
   const [strikeClass, setStrikeClass] = useState('');
   const [gameState, setGameState] = useState(GameState.inProgress)
 
+  const handleReset = () => {
+    setGameState(GameState.inProgress);
+    setTiles(Array(9).fill(null));
+    setPlayerTrun(Player_X);
+    setStrikeClass(null);
+  }
+
   const handleTileClick = (index) => {
     if(gameState !==GameState.inProgress){
       return;
@@ -84,6 +100,18 @@ const TicToe = () => {
     checkWinner(tiles, setStrikeClass, setGameState);
   }, [tiles])
 
+  useEffect(()=>{
+    if (tiles.some((tile => tile != null))){
+      clickSound.play();
+    }
+  }, [tiles])
+
+  useEffect(()=>{
+    if(gameState !== GameState.inProgress){
+      gameOverSound.play()
+    }
+  }, [gameState])
+
   return (
     <div>
       <h1>Tic Tac Toe</h1>
@@ -94,7 +122,7 @@ const TicToe = () => {
           strikeClass={strikeClass}
          />
          <GameOver gameState={gameState}/>
-         <Reset gameState={gameState}/>
+         <Reset gameState={gameState} onReset={handleReset}/>
     </div>
   )
 }
