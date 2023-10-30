@@ -3,6 +3,7 @@ import Board from './Board'
 import './tictoe.css'
 import GameOver from './GameOver';
 import GameState from './GameState';
+import Reset from './Reset';
 
 
 const Player_X = 'X';
@@ -93,6 +94,7 @@ const TicToe = () => {
           strikeClass={strikeClass}
          />
          <GameOver gameState={gameState}/>
+         <Reset gameState={gameState}/>
     </div>
   )
 }
